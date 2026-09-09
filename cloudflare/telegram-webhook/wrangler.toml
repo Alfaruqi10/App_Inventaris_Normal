@@ -1,0 +1,7 @@
+name = "ansla-telegram-webhook-relay"
+main = "src/index.js"
+compatibility_date = "2026-09-05"
+workers_dev = true
+
+# TELEGRAM_WEBHOOK_SECRET and GAS_EXEC_URL are Worker secrets.
+# Set them with `wrangler secret put`; never commit their values here.

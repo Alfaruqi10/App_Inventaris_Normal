@@ -1,0 +1,613 @@
+{
+  "dataset": "ProductionConfigurationImportReference",
+  "source": {
+    "file": "Manajemen Stok - Produksi.pdf",
+    "sha256": "d56de8ac23c9c9740a2c8a12650082ae5641799bf551e6d8ccf405a688f0dc63",
+    "purpose": "MinimumStock and TargetStock only; Moving is reference-only and is not imported"
+  },
+  "records": [
+    {
+      "SKU": "ANS-BAD-HTM-L",
+      "ProductName": "Badzlin Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-BAD-HTM-M",
+      "ProductName": "Badzlin Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-BAD-HTM-S",
+      "ProductName": "Badzlin Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-BAD-HTM-XL",
+      "ProductName": "Badzlin Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 3,
+      "TargetStock": 9,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-BAD-HTM-XXL",
+      "ProductName": "Badzlin Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 3,
+      "TargetStock": 9,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-BW-M",
+      "ProductName": "Emaar Dress",
+      "Color": "Broken White",
+      "Size": "M",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-BW-XXL",
+      "ProductName": "Emaar Dress",
+      "Color": "Broken White",
+      "Size": "XXL",
+      "MinimumStock": 3,
+      "TargetStock": 9,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-HTM-M",
+      "ProductName": "Emaar Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-HTM-XXL",
+      "ProductName": "Emaar Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 3,
+      "TargetStock": 9,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-BW-S",
+      "ProductName": "Emaar Dress",
+      "Color": "Broken White",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-BW-XL",
+      "ProductName": "Emaar Dress",
+      "Color": "Broken White",
+      "Size": "XL",
+      "MinimumStock": 3,
+      "TargetStock": 8,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-HTM-L",
+      "ProductName": "Emaar Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-HTM-S",
+      "ProductName": "Emaar Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-HTM-XL",
+      "ProductName": "Emaar Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 3,
+      "TargetStock": 7,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-EMA-BW-L",
+      "ProductName": "Emaar Dress",
+      "Color": "Broken White",
+      "Size": "L",
+      "MinimumStock": 2,
+      "TargetStock": 4,
+      "MovingReference": "FAST"
+    },
+    {
+      "SKU": "ANS-AZO-HTM-L",
+      "ProductName": "Azoa Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-AZO-HTM-S",
+      "ProductName": "Azoa Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-AZO-HTM-XXL",
+      "ProductName": "Azoa Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 8,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-HAV-HTM-S",
+      "ProductName": "Havva Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-BRK-S",
+      "ProductName": "Isla Dress",
+      "Color": "Brick",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-IVY-HTM-S",
+      "ProductName": "Ivy Tied Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HTR-M",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Terracotta",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-AZO-HTM-M",
+      "ProductName": "Azoa Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-AZO-HTM-XL",
+      "ProductName": "Azoa Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-HAV-HTM-L",
+      "ProductName": "Havva Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-HAV-HTM-M",
+      "ProductName": "Havva Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-BRK-L",
+      "ProductName": "Isla Dress",
+      "Color": "Brick",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-BRK-M",
+      "ProductName": "Isla Dress",
+      "Color": "Brick",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-BRK-XXL",
+      "ProductName": "Isla Dress",
+      "Color": "Brick",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-HTM-L",
+      "ProductName": "Isla Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-HTM-S",
+      "ProductName": "Isla Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 3,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-HTM-XXL",
+      "ProductName": "Isla Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-IVY-HTM-L",
+      "ProductName": "Ivy Tied Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-IVY-HTM-M",
+      "ProductName": "Ivy Tied Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-IVY-HTM-XL",
+      "ProductName": "Ivy Tied Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HNV-L",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Navy",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HNV-XXL",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Navy",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 7,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HTR-L",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Terracotta",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HTR-S",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Terracotta",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 3,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-HAV-HTM-XL",
+      "ProductName": "Havva Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-HAV-HTM-XXL",
+      "ProductName": "Havva Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-BRK-XL",
+      "ProductName": "Isla Dress",
+      "Color": "Brick",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-HTM-M",
+      "ProductName": "Isla Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-IVY-HTM-XXL",
+      "ProductName": "Ivy Tied Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HNV-M",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Navy",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HNV-S",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Navy",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 2,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HNV-XL",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Navy",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HTR-XL",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Terracotta",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-NOI-HTR-XXL",
+      "ProductName": "Noire Dress",
+      "Color": "Hitam Mix Terracotta",
+      "Size": "XXL",
+      "MinimumStock": 2,
+      "TargetStock": 6,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-ISL-HTM-XL",
+      "ProductName": "Isla Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 2,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-VIS-HTM-ALS",
+      "ProductName": "Visca Kaftan",
+      "Color": "Hitam",
+      "Size": "All Size",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "MIDDLE"
+    },
+    {
+      "SKU": "ANS-AAF-CIN-M",
+      "ProductName": "Aafiya Dress",
+      "Color": "Cinnamon",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-CIN-S",
+      "ProductName": "Aafiya Dress",
+      "Color": "Cinnamon",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 2,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-CIN-XL",
+      "ProductName": "Aafiya Dress",
+      "Color": "Cinnamon",
+      "Size": "XL",
+      "MinimumStock": 1,
+      "TargetStock": 6,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-HTM-M",
+      "ProductName": "Aafiya Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-HTM-S",
+      "ProductName": "Aafiya Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 2,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-CIN-L",
+      "ProductName": "Aafiya Dress",
+      "Color": "Cinnamon",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 3,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-CIN-XXL",
+      "ProductName": "Aafiya Dress",
+      "Color": "Cinnamon",
+      "Size": "XXL",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-HTM-L",
+      "ProductName": "Aafiya Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 3,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-HTM-XL",
+      "ProductName": "Aafiya Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-IRI-HTM-M",
+      "ProductName": "Irish Stripes Dress",
+      "Color": "Hitam",
+      "Size": "M",
+      "MinimumStock": 1,
+      "TargetStock": 3,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-IRI-HTM-S",
+      "ProductName": "Irish Stripes Dress",
+      "Color": "Hitam",
+      "Size": "S",
+      "MinimumStock": 1,
+      "TargetStock": 1,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-IRI-HTM-XL",
+      "ProductName": "Irish Stripes Dress",
+      "Color": "Hitam",
+      "Size": "XL",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-IRI-HTM-XXL",
+      "ProductName": "Irish Stripes Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-IRI-HTM-ALS",
+      "ProductName": "Irish Stripe Kaftan",
+      "Color": "Hitam",
+      "Size": "All Size",
+      "MinimumStock": 1,
+      "TargetStock": 5,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-AAF-HTM-XXL",
+      "ProductName": "Aafiya Dress",
+      "Color": "Hitam",
+      "Size": "XXL",
+      "MinimumStock": 1,
+      "TargetStock": 4,
+      "MovingReference": "SLOW"
+    },
+    {
+      "SKU": "ANS-IRI-HTM-L",
+      "ProductName": "Irish Stripes Dress",
+      "Color": "Hitam",
+      "Size": "L",
+      "MinimumStock": 1,
+      "TargetStock": 2,
+      "MovingReference": "SLOW"
+    }
+  ]
+}

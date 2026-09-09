@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Alert & Production - Manual Test Mode</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, Segoe UI, Arial, sans-serif; color: #172033; background: #f5f7fb; }
+    * { box-sizing: border-box; } body { margin: 0; } main { max-width: 1220px; margin: 0 auto; padding: 28px 18px 48px; }
+    h1 { margin: 0; font-size: 24px; } h2 { font-size: 15px; margin: 0 0 12px; } p { color: #667085; line-height: 1.45; }
+    .banner { border: 1px solid #86efac; background: #f0fdf4; color: #166534; padding: 12px 14px; border-radius: 8px; margin: 16px 0; font-weight: 700; }
+    .layout { display: grid; grid-template-columns: 315px minmax(0, 1fr); gap: 16px; } .card { background: white; border: 1px solid #dfe5ef; border-radius: 8px; padding: 16px; }
+    .scenarios { display: grid; gap: 8px; } button { border: 1px solid #cfd8e7; background: #fff; border-radius: 6px; padding: 9px 10px; text-align: left; font: inherit; cursor: pointer; color: #172033; }
+    button:hover { border-color: #2563eb; background: #eff6ff; } button.primary { background: #2563eb; border-color: #2563eb; color: white; font-weight: 700; } button.secondary { background: #f8fafc; }
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; } .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    label { display: grid; gap: 5px; color: #475467; font-size: 12px; font-weight: 700; } input, select { width: 100%; border: 1px solid #cfd8e7; border-radius: 5px; padding: 8px; font: inherit; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; } th, td { padding: 9px; border-bottom: 1px solid #edf0f5; text-align: left; vertical-align: top; } th { color: #667085; background: #f8fafc; }
+    .value { font-size: 22px; font-weight: 800; } .kpi { border: 1px solid #e6eaf1; border-radius: 6px; padding: 11px; } .muted { color: #667085; } .ok { color: #15803d; font-weight: 700; } .fail { color: #b42318; font-weight: 700; }
+    .tag { display: inline-block; padding: 3px 7px; border-radius: 999px; font-size: 11px; font-weight: 700; background: #eff6ff; color: #1d4ed8; } .tag.warn { background: #fff7ed; color: #c2410c; } .tag.green { background: #ecfdf3; color: #15803d; }
+    pre { overflow: auto; min-height: 140px; max-height: 330px; margin: 0; padding: 12px; border-radius: 6px; background: #0f172a; color: #d1fae5; font-size: 12px; white-space: pre-wrap; }
+    .hidden { display: none; } @media (max-width: 850px) { .layout { grid-template-columns: 1fr; } .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Stock Alert & Production - Manual Test Mode</h1>
+    <p>Simulator lokal untuk memverifikasi kontrak lifecycle Konveksi. Semua fixture, alert, queue, history, dan Telegram counter hanya hidup di memori tab browser ini.</p>
+    <div class="banner">TEST MODE ONLY: tidak ada request Web App, Spreadsheet, Telegram, atau database production.</div>
+    <div class="layout">
+      <aside class="card">
+        <h2>Skenario Otomatis</h2>
+        <div class="scenarios" id="scenario-buttons"></div>
+        <div class="toolbar" style="margin-top:16px"><button class="secondary" id="run-all">Jalankan Semua</button><button class="secondary" id="reset">Reset Test Data</button></div>
+      </aside>
+      <section>
+        <div class="card">
+          <h2>Fixture Manual</h2>
+          <div class="grid">
+            <label>SKU<input id="sku" value="TEST-JOIA-NAVY-ALL"></label>
+            <label>Produk<input id="product" value="Joia Outer - Navy All Size"></label>
+            <label>Stock Current<input id="stock" type="number" value="1" min="0"></label>
+            <label>Minimum Stock<input id="minimum" type="number" value="2" min="0"></label>
+            <label>Target Stock<input id="target" type="number" value="7" min="1"></label>
+            <label>Minimum Production Batch<input id="batch" type="number" value="5" min="1"></label>
+            <label>Enabled<select id="enabled"><option value="true">true</option><option value="false">false</option></select></label>
+            <label>Config<select id="has-config"><option value="true">ada</option><option value="false">tidak ada</option></select></label>
+            <label>SalesLedger units/30 hari<input id="units" type="number" value="16" min="0"></label>
+          </div>
+          <div class="toolbar" style="margin-top:16px"><button class="primary" id="evaluate">Evaluasi Fixture</button><button id="start">Tandai Queue IN_PROGRESS</button></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h2>Hasil Test Saat Ini</h2>
+          <div class="grid">
+            <div class="kpi"><span class="muted">Active Alert</span><div class="value" id="active">-</div></div>
+            <div class="kpi"><span class="muted">Suggested Qty</span><div class="value" id="suggested">-</div></div>
+            <div class="kpi"><span class="muted">Moving</span><div class="value" id="moving">-</div></div>
+            <div class="kpi"><span class="muted">Telegram test batch</span><div class="value" id="telegram">0</div></div>
+          </div>
+          <div style="margin-top:16px; overflow:auto"><table><thead><tr><th>Active Alert</th><th>Queue</th><th>Lifecycle</th><th>History terbaru</th></tr></thead><tbody id="state-row"></tbody></table></div>
+        </div>
+        <div class="card" style="margin-top:16px"><h2>Log Verifikasi</h2><pre id="log"></pre></div>
+      </section>
+    </div>
+  <script>
+    // This file is intentionally local-memory only.
+    const scenarios = [
+      ["TEST 1 - Stok Aman", () => setFixture({ stock: 8, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 0 }), ["Tidak ada Active Alert", "Tidak ada Queue", "SuggestedQty 0", "Telegram 0"]],
+      ["TEST 2 - Stok Menipis", () => setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 3 }), ["Active Alert", "Queue PENDING", "SuggestedQty 6"]],
+      ["TEST 3 - Shortfall < Batch", () => setFixture({ stock: 6, minimum: 7, target: 8, batch: 5, enabled: true, hasConfig: true, units: 3 }), ["SuggestedQty 5"]],
+      ["TEST 4 - Moving Stat", () => { setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 16 }); evaluate(); }, [">=16 FAST; 1-15 MIDDLE; 0 SLOW"]],
+      ["TEST 5 - Anti-spam", () => { setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 3 }); evaluate(); evaluate(); }, ["Satu alert", "Satu queue", "Satu Telegram batch"]],
+      ["TEST 6 - Stok Kembali Aman", () => { setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 3 }); evaluate(); setFixture({ stock: 8 }, false); evaluate(); }, ["Alert hilang", "Queue RESOLVED", "History resolution", "Telegram tidak bertambah"]],
+      ["TEST 7 - IN_PROGRESS", () => { setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 3 }); evaluate(); startQueue(); setFixture({ stock: 8 }, false); evaluate(); }, ["Alert hilang", "Queue tetap IN_PROGRESS"]],
+      ["TEST 8 - Reactivation", () => { setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 3 }); evaluate(); setFixture({ stock: 8 }, false); evaluate(); setFixture({ stock: 1 }, false); evaluate(); }, ["Lifecycle baru", "Queue PENDING baru", "Satu Telegram batch lifecycle baru"]],
+      ["TEST 9 - Disabled Config", () => setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: false, hasConfig: true, units: 3 }), ["Tidak ada Alert/Queue/Telegram"]],
+      ["TEST 10 - Tanpa Config", () => setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: false, units: 3 }), ["Tidak ada Alert/Queue/Telegram"]]
+    ];
+    const state = { alert: null, queue: null, lifecycle: 0, telegramBatches: 0, history: [], latestFixture: {} };
+    const $ = id => document.getElementById(id);
+    const readFixture = () => ({ sku: $("sku").value.trim(), product: $("product").value.trim(), stock: Number($("stock").value), minimum: Number($("minimum").value), target: Number($("target").value), batch: Number($("batch").value), enabled: $("enabled").value === "true", hasConfig: $("has-config").value === "true", units: Number($("units").value) });
+    function setFixture(values, resetState = true) { Object.entries(values).forEach(([key, value]) => { const target = { stock: "stock", minimum: "minimum", target: "target", batch: "batch", enabled: "enabled", hasConfig: "has-config", units: "units" }[key]; if (target) $(target).value = String(value); }); if (resetState) { state.alert = null; state.queue = null; state.lifecycle = 0; state.telegramBatches = 0; state.history = []; } state.latestFixture = readFixture(); render(resetState ? "Fixture direset. Klik Evaluasi Fixture untuk menjalankan lifecycle." : "Kondisi fixture diperbarui tanpa mereset lifecycle."); }
+    function moving(units) { return units >= 16 ? "FAST" : units >= 1 ? "MIDDLE" : "SLOW"; }
+    function model(fixture) { const valid = fixture.hasConfig && fixture.minimum >= 0 && fixture.target > fixture.minimum && fixture.batch > 0; const shortfall = valid ? Math.max(0, fixture.target - fixture.stock) : 0; const suggested = shortfall > 0 ? Math.max(shortfall, fixture.batch) : 0; const active = valid && fixture.enabled && fixture.stock <= fixture.minimum && suggested > 0; return { valid, shortfall, suggested, active, moving: moving(fixture.units) }; }
+    function evaluate() {
+      const fixture = readFixture(); state.latestFixture = fixture; const result = model(fixture); const timestamp = new Date().toLocaleTimeString("id-ID");
+      if (!result.active) {
+        if (state.alert) { state.history.push(`${timestamp} ALERT_RESOLVED ${fixture.sku}`); state.alert = null; }
+        if (state.queue && state.queue.status === "PENDING") { state.queue.status = "RESOLVED"; state.history.push(`${timestamp} QUEUE_RESOLVED ${fixture.sku}`); }
+        render(`Evaluasi aman/disabled/no-config. SuggestedQty=${result.suggested}. Tidak ada Telegram.`); return;
+      }
+      const lifecycleStarted = !state.alert;
+      if (lifecycleStarted) { state.lifecycle += 1; state.alert = { status: fixture.stock < fixture.minimumStock ? "CRITICAL" : "PRODUCTION_REQUIRED" }; state.history.push(`${timestamp} ALERT_ACTIVE ${fixture.sku} lifecycle ${state.lifecycle}`); }
+      if (!state.queue || state.queue.status === "RESOLVED") { state.queue = { status: "PENDING", recommendedQty: result.suggested, lifecycle: state.lifecycle }; state.history.push(`${timestamp} QUEUE_CREATED ${fixture.sku} qty ${result.suggested}`); }
+      else if (state.queue.status === "PENDING") state.queue.recommendedQty = result.suggested;
+      if (lifecycleStarted) { state.telegramBatches += 1; state.history.push(`${timestamp} TELEGRAM_TEST_BATCH lifecycle ${state.lifecycle}`); }
+      render(`Evaluasi aktif. Shortfall=${result.shortfall}; SuggestedQty=${result.suggested}; Telegram ${lifecycleStarted ? "batch baru" : "tidak dikirim ulang"}.`);
+    }
+    function startQueue() { if (!state.queue || state.queue.status !== "PENDING") return render("Queue PENDING belum tersedia untuk diuji."); state.queue.status = "IN_PROGRESS"; state.history.push(`${new Date().toLocaleTimeString("id-ID")} QUEUE_IN_PROGRESS ${readFixture().sku}`); render("Queue ditandai IN_PROGRESS. Evaluasi aman berikutnya tidak boleh me-resolve queue ini."); }
+    function render(message) {
+      const fixture = readFixture(), result = model(fixture), queue = state.queue;
+      $("active").textContent = state.alert ? state.alert.status : "Tidak ada"; $("suggested").textContent = result.suggested; $("moving").textContent = result.moving; $("telegram").textContent = state.telegramBatches;
+      $("state-row").innerHTML = `<tr><td>${state.alert ? '<span class="tag warn">' + state.alert.status + '</span>' : '<span class="tag green">Tidak ada</span>'}</td><td>${queue ? '<span class="tag">' + queue.status + '</span> · saran ' + queue.recommendedQty : '-'}</td><td>${state.lifecycle || '-'}</td><td>${state.history.at(-1) || '-'}</td></tr>`;
+      $("log").textContent = [message, "", "Fixture: " + JSON.stringify(fixture), "Shortfall: " + result.shortfall, "SuggestedQty: " + result.suggested, "Moving: " + result.moving, "History:", ...state.history].join("\n");
+    }
+    scenarios.forEach(([label, run, expected], index) => { const button = document.createElement("button"); button.textContent = label; button.onclick = () => { run(); if (index !== 3) evaluate(); render($("log").textContent + "\nExpected: " + expected.join(" | ")); }; $("scenario-buttons").appendChild(button); });
+    $("evaluate").onclick = evaluate; $("start").onclick = startQueue; $("reset").onclick = () => setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 16 });
+    $("run-all").onclick = () => { let report = []; scenarios.forEach(([label, run, expected], index) => { run(); if (index !== 3) evaluate(); report.push(`${label}: expected ${expected.join(", ")}`); }); render(report.join("\n")); };
+    setFixture({ stock: 1, minimum: 2, target: 7, batch: 5, enabled: true, hasConfig: true, units: 16 });
+  </script>
+</body>
+</html>

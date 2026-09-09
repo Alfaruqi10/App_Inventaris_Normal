@@ -1,0 +1,37 @@
+{
+  "name": "app-inventaris-normal",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/ads-sales-integrity.test.mjs && node tests/sales-ledger-line-level.test.mjs && node tests/sales-ledger-production-migration-writer.test.mjs && node tests/sales-ledger-payment-evidence.test.mjs && node tests/sales-ledger-qty.test.mjs && node tests/finance-resync.test.mjs && node tests/order-notification.test.mjs && node tests/stock-production.test.mjs && node tests/stock-production-telegram-harness.test.mjs && node tests/stock-production-manual-harness.test.mjs && node tests/telegram-production-control.test.mjs && node tests/telegram-production-reports.test.mjs && node tests/production-reports-auth-design-proof.test.mjs && node tests/production-reports-auth-session.test.mjs && node tests/telegram-webhook-diagnostics.test.mjs && node tests/telegram-cloudflare-relay.test.mjs && node tests/production-recipient-crud-harness.test.mjs && node tests/browser-session-stock-production-audit.test.mjs && node tests/button-loading.test.mjs && node tests/production-selection.test.mjs && node tests/production-center-datetime.test.mjs && node tests/production-reference-normalization.test.mjs && node tests/moving-formula-discovery.test.mjs && node tests/production-configuration-import.test.mjs",
+    "dry-run:production-reference": "cd src/node-backend && node tools/run-production-reference-dry-run.mjs",
+    "dry-run:production-moving": "cd src/node-backend && node tools/dry-run-production-moving.mjs",
+    "discover:moving-formula": "node tools/run-moving-formula-discovery.mjs",
+    "analyze:moving-formula-v2": "node tools/run-moving-formula-v2-sensitivity.mjs",
+    "dry-run:production-configuration-import": "cd src/node-backend && node tools/import-production-configuration-reference.mjs",
+    "dry-run:finalize-production-moving": "cd src/node-backend && node tools/finalize-production-moving-manual.mjs",
+    "build": "webpack && node build.js",
+    "verify:apps-script-syntax": "node tools/verify-apps-script-syntax.mjs",
+    "verify:source-dist-parity": "node tools/verify-source-dist-parity.mjs",
+    "push": "npm run build && npx clasp push --force",
+    "deploy": "npm run build && npx clasp push --force && npx clasp deploy -i AKfycbx85eZMbdg_IvxxzGRAZucD1dFpZ8vdkdKKjtTeAqYnYpc1qBQUdK4YvLxjDmc7nynGzA"
+  },
+  "dependencies": {
+    "@google/genai": "^2.10.0",
+    "jsdom": "^29.1.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.4",
+    "copy-webpack-plugin": "^14.0.0",
+    "css-loader": "^7.1.4",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "html-webpack-plugin": "^5.6.7",
+    "mini-css-extract-plugin": "^2.10.2",
+    "postcss": "^8.5.19",
+    "postcss-loader": "^8.2.1",
+    "tailwindcss": "^4.3.3",
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1"
+  }
+}
