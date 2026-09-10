@@ -479,8 +479,8 @@ All rights reserved.
 ## 📞 Support
 
 For issues, questions, or feature requests:
-- 📧 Email: support@ansla.com
-- 📱 Telegram: @ansla_support
+- 📧 Email: alfaruqi752@gmail.com
+- 📱 Telegram: @alfaruqiw
 - 📝 GitHub Issues: (if applicable)
 
 ---
